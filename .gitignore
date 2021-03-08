@@ -1,0 +1,5 @@
+# Cmake build
+cmake-build-debug
+
+# Executables
+*.exe
