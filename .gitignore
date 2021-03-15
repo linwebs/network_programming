@@ -3,3 +3,7 @@ cmake-build-debug
 
 # Executables
 *.exe
+
+# test program
+hk-telnet-server-version-3-0-1
+miniweb

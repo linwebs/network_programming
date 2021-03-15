@@ -2,7 +2,7 @@
 #include <string>
 #include <winsock.h>
 
-#define USING_CIN false
+#define USING_CIN true
 using namespace std;
 
 int main(int argc, char *argv[]) {
@@ -42,8 +42,10 @@ int main(int argc, char *argv[]) {
 		cout << "WSA Error: " << WSAGetLastError() << endl;
 	} else {
 		cout << ip_addr << "'s domain name: " << hp->h_name << endl;
-		if (hp->h_aliases[0] != NULL) {
-			cout << "nickname: " << hp->h_aliases[0] << endl;
+		if (hp->h_aliases[0] != nullptr) {
+			for(int i=0; hp->h_aliases[i]; i++) {
+				cout << "nickname: " << hp->h_aliases[i] << endl;
+			}
 		} else {
 			cout << "nickname: (NULL)" << endl;
 		}
