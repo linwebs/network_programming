@@ -7,3 +7,7 @@ cmake-build-debug
 # test program
 hk-telnet-server-version-3-0-1
 miniweb
+
+# teacher example
+gethostbyaddr.cpp
+simple-client.c
