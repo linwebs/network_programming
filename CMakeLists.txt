@@ -23,5 +23,13 @@ target_link_libraries(echo_service ws2_32 wsock32)
 add_executable(hw2 hw2.cpp)
 target_link_libraries(hw2 ws2_32 wsock32)
 
+# week5
+add_executable(http_get http_get.cpp)
+target_link_libraries(http_get ws2_32 wsock32)
+
+# week5 hw
+add_executable(hw3 hw3.cpp)
+target_link_libraries(hw3 ws2_32 wsock32)
+
 # clock
 add_executable(clock clock.cpp)

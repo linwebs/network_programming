@@ -11,3 +11,4 @@ miniweb
 # teacher example
 gethostbyaddr.cpp
 simple-client.c
+simple_browser.c
