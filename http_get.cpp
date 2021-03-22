@@ -4,18 +4,18 @@
 #include <iostream>
 #include <winsock.h>
 
-// å®šç¾©å›žå‚³å­—å…ƒæœ€å¤§æ•¸é‡
+// ©w¸q¦^¶Ç¦r¤¸³Ì¤j¼Æ¶q
 #define MAXLINE 1024
 
 using namespace std;
 
 /*
- * åŸ·è¡Œå®Œç•¢çµæžœ
- * int status	=> åŸ·è¡Œç‹€æ…‹
- * int send_len	=> å‚³é€çš„å…§å®¹é•·åº¦
- * int recv_len	=> æŽ¥æ”¶åˆ°çš„å…§å®¹é•·åº¦
- * string send	=> å‚³é€çš„å…§å®¹
- * string recv	=> æŽ¥æ”¶åˆ°çš„å…§å®¹
+ * °õ¦æ§¹²¦µ²ªG
+ * int status	=> °õ¦æª¬ºA
+ * int send_len	=> ¶Ç°eªº¤º®eªø«×
+ * int recv_len	=> ±µ¦¬¨ìªº¤º®eªø«×
+ * string send	=> ¶Ç°eªº¤º®e
+ * string recv	=> ±µ¦¬¨ìªº¤º®e
  */
 struct content {
 	int status;
@@ -40,14 +40,14 @@ struct sockaddr_in serv{};
 int main() {
 	string msg, ip;
 	u_short port;
-	cout << "è«‹è¼¸å…¥è¦é€£ç·šçš„ ip address:" << endl;
+	cout << "½Ð¿é¤J­n³s½uªº ip address:" << endl;
 	cin >> ip;
-	cout << "è«‹è¼¸å…¥è¦é€£ç·šçš„ port number:" << endl;
+	cout << "½Ð¿é¤J­n³s½uªº port number:" << endl;
 	cin >> port;
 	if (init_simpletcp_service(ip.c_str(), port)) {
 		getline(cin, msg);
 		//	while (true) {
-		cout << "è«‹è¼¸å…¥è¦å‚³é€çš„è¨Šæ¯:" << endl;
+		cout << "½Ð¿é¤J­n¶Ç°eªº°T®§:" << endl;
 		if (msg == "exit") {
 			cout << "goodbye~" << endl;
 			//break;
@@ -93,7 +93,7 @@ bool init_simpletcp_service(const char server_ip[16], u_short server_port) {
 	conn_status = connect(sd, (LPSOCKADDR) &serv, sizeof(serv));
 
 	if (conn_status == SOCKET_ERROR) {
-		cout << "[éŒ¯èª¤] ç„¡æ³•é€£ç·šï¼ŒéŒ¯èª¤è¨Šæ¯: " << WSAGetLastError() << endl;
+		cout << "[¿ù»~] µLªk³s½u¡A¿ù»~°T®§: " << WSAGetLastError() << endl;
 		closesocket(sd);
 		WSACleanup();
 		return false;
@@ -103,12 +103,12 @@ bool init_simpletcp_service(const char server_ip[16], u_short server_port) {
 }
 
 /*
- * é€£ç·šè‡³ Simple TCP Service
- * const char str[MAXLINE] å‚³é€çš„å…§å®¹
- * const char server_ip[16] ä¼ºæœå™¨ç«¯ ip ä½å€ (ipv4 æ ¼å¼)
- * u_short server_port ä¼ºæœå™¨ç«¯åŸ è™Ÿ
+ * ³s½u¦Ü Simple TCP Service
+ * const char str[MAXLINE] ¶Ç°eªº¤º®e
+ * const char server_ip[16] ¦øªA¾¹ºÝ ip ¦ì§} (ipv4 ®æ¦¡)
+ * u_short server_port ¦øªA¾¹ºÝ°ð¸¹
  *
- * å›žå‚³ content æŒ‡æ¨™
+ * ¦^¶Ç content «ü¼Ð
  */
 content *simpletcp_service(const char str[MAXLINE]) {
 	// send status
@@ -127,7 +127,7 @@ content *simpletcp_service(const char str[MAXLINE]) {
 	send_status = send(sd, str, int(strlen(str)) + 1, 0);
 
 	if (send_status == SOCKET_ERROR) {
-		cout << "[éŒ¯èª¤] ç„¡æ³•å‚³é€è¨Šæ¯ï¼ŒéŒ¯èª¤è¨Šæ¯: " << WSAGetLastError() << endl;
+		cout << "[¿ù»~] µLªk¶Ç°e°T®§¡A¿ù»~°T®§: " << WSAGetLastError() << endl;
 
 		result->status = 1;
 		result->recv = to_string(WSAGetLastError());
@@ -146,7 +146,7 @@ content *simpletcp_service(const char str[MAXLINE]) {
 	rec_len2 = recv(sd, str_r2, MAXLINE, 0);
 	//cout << "test 5" << endl;
 	if (rec_len == SOCKET_ERROR) {
-		cout << "[éŒ¯èª¤] ç„¡æ³•æŽ¥æ”¶è¨Šæ¯ï¼ŒéŒ¯èª¤è¨Šæ¯: " << WSAGetLastError() << endl;
+		cout << "[¿ù»~] µLªk±µ¦¬°T®§¡A¿ù»~°T®§: " << WSAGetLastError() << endl;
 
 		result->status = 1;
 		result->recv = to_string(WSAGetLastError());
@@ -169,7 +169,7 @@ void finish_simpletcp_service() {
 	close_socket_status = closesocket(sd);
 
 	if (close_socket_status == SOCKET_ERROR) {
-		cout << "[éŒ¯èª¤] ç„¡æ³•é—œé–‰ socketï¼ŒéŒ¯èª¤è¨Šæ¯: " << WSAGetLastError() << endl;
+		cout << "[¿ù»~] µLªkÃö³¬ socket¡A¿ù»~°T®§: " << WSAGetLastError() << endl;
 	}
 
 	// finish "WinSock DLL"
@@ -177,12 +177,12 @@ void finish_simpletcp_service() {
 }
 
 /*
- * åŸ·è¡Œå®Œç•¢å°‡çµæžœè¼¸å‡º
- * content *result åŸ·è¡ŒçµæžœæŒ‡æ¨™
+ * °õ¦æ§¹²¦±Nµ²ªG¿é¥X
+ * content *result °õ¦æµ²ªG«ü¼Ð
  */
 void output(content *result) {
 	if (result->status == 0) {
-		cout << "[å‚³é€å…§å®¹] " << result->send << "(" << result->send_len << "bytes)" << endl;
-		cout << "[å›žæ‡‰å…§å®¹] " << result->recv << "(" << result->recv_len << "bytes)" << endl;
+		cout << "[¶Ç°e¤º®e] " << result->send << "(" << result->send_len << "bytes)" << endl;
+		cout << "[¦^À³¤º®e] " << result->recv << "(" << result->recv_len << "bytes)" << endl;
 	}
 }

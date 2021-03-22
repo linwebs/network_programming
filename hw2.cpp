@@ -6,18 +6,18 @@
 #include <iostream>
 #include <winsock.h>
 
-// å®šç¾©å›å‚³å­—å…ƒæœ€å¤§æ•¸é‡
+// ©w¸q¦^¶Ç¦r¤¸³Ì¤j¼Æ¶q
 #define MAXLINE 1024
 
 using namespace std;
 
 /*
- * åŸ·è¡Œå®Œç•¢çµæœ
- * int status	=> åŸ·è¡Œç‹€æ…‹
- * int send_len	=> å‚³é€çš„å…§å®¹é•·åº¦
- * int recv_len	=> æ¥æ”¶åˆ°çš„å…§å®¹é•·åº¦
- * string send	=> å‚³é€çš„å…§å®¹
- * string recv	=> æ¥æ”¶åˆ°çš„å…§å®¹
+ * °õ¦æ§¹²¦µ²ªG
+ * int status	=> °õ¦æª¬ºA
+ * int send_len	=> ¶Ç°eªº¤º®eªø«×
+ * int recv_len	=> ±µ¦¬¨ìªº¤º®eªø«×
+ * string send	=> ¶Ç°eªº¤º®e
+ * string recv	=> ±µ¦¬¨ìªº¤º®e
  */
 struct content {
 	int status;
@@ -52,21 +52,21 @@ int main() {
 }
 
 /*
- * æ­¡è¿ç•«é¢
+ * Åwªïµe­±
  */
 void welcome_msg() {
 	cout << "+++++++++++++++++++++++++++++" << endl;
-	cout << "| è«‹è¼¸å…¥æœå‹™çš„ä»£è™Ÿ(1~5)ä»¥åŸ·è¡Œæœå‹™ |" << endl;
-	cout << "| 1. å›æ‡‰æœå‹™ (Echo)          |" << endl;
-	cout << "| 2. ä¸Ÿæ£„æœå‹™ (Discard)       |" << endl;
-	cout << "| 3. æ—¥æœŸæ™‚é–“æœå‹™ (Daytime)    |" << endl;
-	cout << "| 4. æ¯æ—¥ä¸€å¥ (QUOTE)         |" << endl;
-	cout << "| 5. å­—å…ƒç”¢ç”Ÿå™¨ (CHARGEN)      |" << endl;
+	cout << "| ½Ğ¿é¤JªA°Èªº¥N¸¹(1~5)¥H°õ¦æªA°È |" << endl;
+	cout << "| 1. ¦^À³ªA°È (Echo)          |" << endl;
+	cout << "| 2. ¥á±óªA°È (Discard)       |" << endl;
+	cout << "| 3. ¤é´Á®É¶¡ªA°È (Daytime)    |" << endl;
+	cout << "| 4. ¨C¤é¤@¥y (QUOTE)         |" << endl;
+	cout << "| 5. ¦r¤¸²£¥Í¾¹ (CHARGEN)      |" << endl;
 	cout << "+++++++++++++++++++++++++++++" << endl;
 }
 
 /*
- * é¸æ“‡æœå‹™
+ * ¿ï¾ÜªA°È
  */
 void choose_service() {
 	char service;
@@ -88,12 +88,12 @@ void choose_service() {
 			func_chargen();
 			break;
 		default:
-			cout << "[éŒ¯èª¤] è¼¸å…¥çš„æ ¼å¼éŒ¯èª¤ï¼Œè«‹é‡æ–°è¼¸å…¥" << endl;
+			cout << "[¿ù»~] ¿é¤Jªº®æ¦¡¿ù»~¡A½Ğ­«·s¿é¤J" << endl;
 	}
 }
 
 /*
- * åŸ·è¡Œ 1å›æ‡‰æœå‹™ (Echo)
+ * °õ¦æ 1¦^À³ªA°È (Echo)
  */
 void func_echo() {
 	content *result = simpletcp_service("I love NCYU CSIE", "127.0.0.1", 7);
@@ -101,16 +101,16 @@ void func_echo() {
 }
 
 /*
- * åŸ·è¡Œ 2ä¸Ÿæ£„æœå‹™ (Discard)
+ * °õ¦æ 2¥á±óªA°È (Discard)
  */
 void func_discard() {
-	cout << "[è¨Šæ¯] åŸ·è¡Œä¸Ÿæ£„æœå‹™ï¼Œè‹¥éœ€çµæŸï¼Œè«‹æ‰‹å‹•é—œé–‰ç¨‹å¼" << endl;
+	cout << "[°T®§] °õ¦æ¥á±óªA°È¡A­Y»İµ²§ô¡A½Ğ¤â°ÊÃö³¬µ{¦¡" << endl;
 	content *result = simpletcp_service("I love NCYU CSIE", "127.0.0.1", 9);
 	output(result);
 }
 
 /*
- * åŸ·è¡Œ 3æ—¥æœŸæ™‚é–“æœå‹™ (Daytime)
+ * °õ¦æ 3¤é´Á®É¶¡ªA°È (Daytime)
  */
 void func_daytime() {
 	content *result = simpletcp_service("", "127.0.0.1", 13);
@@ -118,7 +118,7 @@ void func_daytime() {
 }
 
 /*
- * åŸ·è¡Œ 4æ¯æ—¥ä¸€å¥ (QUOTE)
+ * °õ¦æ 4¨C¤é¤@¥y (QUOTE)
  */
 void func_quote() {
 	content *result = simpletcp_service("", "127.0.0.1", 17);
@@ -126,7 +126,7 @@ void func_quote() {
 }
 
 /*
- * åŸ·è¡Œ 5å­—å…ƒç”¢ç”Ÿå™¨ (CHARGEN)
+ * °õ¦æ 5¦r¤¸²£¥Í¾¹ (CHARGEN)
  */
 void func_chargen() {
 	content *result = simpletcp_service("", "127.0.0.1", 19);
@@ -134,32 +134,32 @@ void func_chargen() {
 }
 
 /*
- * åŸ·è¡Œå®Œç•¢å°‡çµæœè¼¸å‡º
- * content *result åŸ·è¡ŒçµæœæŒ‡æ¨™
+ * °õ¦æ§¹²¦±Nµ²ªG¿é¥X
+ * content *result °õ¦æµ²ªG«ü¼Ğ
  */
 void output(content *result) {
 	cout << "++++++++++" << endl;
-	cout << "| åŸ·è¡Œçµæœ |" << endl;
+	cout << "| °õ¦æµ²ªG |" << endl;
 	cout << "++++++++++" << endl;
 	if (result->status == 0) {
-		cout << "[å‚³é€å…§å®¹] " << endl;
+		cout << "[¶Ç°e¤º®e] " << endl;
 		cout << result->send << endl;
-		cout << "[å‚³é€å…§å®¹é•·åº¦] " << result->send_len << "bytes" << endl;
-		cout << "[å›æ‡‰å…§å®¹] " << endl;
+		cout << "[¶Ç°e¤º®eªø«×] " << result->send_len << "bytes" << endl;
+		cout << "[¦^À³¤º®e] " << endl;
 		cout << result->recv << endl;
-		cout << "[å›æ‡‰å…§å®¹é•·åº¦] " << result->recv_len << "bytes" << endl;
+		cout << "[¦^À³¤º®eªø«×] " << result->recv_len << "bytes" << endl;
 	} else {
-		cout << "[éŒ¯èª¤] ç„¡æ³•é€£ç·šï¼ŒéŒ¯èª¤è¨Šæ¯: " << result->recv << endl;
+		cout << "[¿ù»~] µLªk³s½u¡A¿ù»~°T®§: " << result->recv << endl;
 	}
 }
 
 /*
- * é€£ç·šè‡³ Simple TCP Service
- * const char str[MAXLINE] å‚³é€çš„å…§å®¹
- * const char server_ip[16] ä¼ºæœå™¨ç«¯ ip ä½å€ (ipv4 æ ¼å¼)
- * u_short server_port ä¼ºæœå™¨ç«¯åŸ è™Ÿ
+ * ³s½u¦Ü Simple TCP Service
+ * const char str[MAXLINE] ¶Ç°eªº¤º®e
+ * const char server_ip[16] ¦øªA¾¹ºİ ip ¦ì§} (ipv4 ®æ¦¡)
+ * u_short server_port ¦øªA¾¹ºİ°ğ¸¹
  *
- * å›å‚³ content æŒ‡æ¨™
+ * ¦^¶Ç content «ü¼Ğ
  */
 content *simpletcp_service(const char str[MAXLINE], const char server_ip[16], u_short server_port) {
 	SOCKET sd;

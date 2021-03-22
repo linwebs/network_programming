@@ -5,18 +5,18 @@
 #include <iostream>
 #include <winsock.h>
 
-// å®šç¾©å›å‚³å­—å…ƒæœ€å¤§æ•¸é‡
+// ©w¸q¦^¶Ç¦r¤¸³Ì¤j¼Æ¶q
 #define MAXLINE 1024
 
 using namespace std;
 
 /*
- * åŸ·è¡Œå®Œç•¢çµæœ
- * int status	=> åŸ·è¡Œç‹€æ…‹
- * int send_len	=> å‚³é€çš„å…§å®¹é•·åº¦
- * int recv_len	=> æ¥æ”¶åˆ°çš„å…§å®¹é•·åº¦
- * string send	=> å‚³é€çš„å…§å®¹
- * string recv	=> æ¥æ”¶åˆ°çš„å…§å®¹
+ * °õ¦æ§¹²¦µ²ªG
+ * int status	=> °õ¦æª¬ºA
+ * int send_len	=> ¶Ç°eªº¤º®eªø«×
+ * int recv_len	=> ±µ¦¬¨ìªº¤º®eªø«×
+ * string send	=> ¶Ç°eªº¤º®e
+ * string recv	=> ±µ¦¬¨ìªº¤º®e
  */
 struct content {
 	int status = -1;
@@ -30,9 +30,9 @@ struct content {
 };
 
 /*
- * é€£çµçµæ§‹
- * int next		=> ä¸‹ä¸€å€‹é–‹å§‹å°‹æ‰¾çš„é€£çµä½ç½®
- * string href	=> é€£çµæª”æ¡ˆ
+ * ³sµ²µ²ºc
+ * int next		=> ¤U¤@­Ó¶}©l´M§äªº³sµ²¦ì¸m
+ * string href	=> ³sµ²ÀÉ®×
  */
 struct href_struct {
 	int next = -1;
@@ -67,11 +67,11 @@ u_short port;    // port number
 
 int main() {
 	string msg;
-	cout << "è«‹è¼¸å…¥è¦é€£ç·šçš„ ip ä½å€(å¦‚: 127.0.0.1):" << endl;
+	cout << "½Ğ¿é¤J­n³s½uªº ip ¦ì§}(¦p: 127.0.0.1):" << endl;
 	cin >> ip;
 	//ip = "127.0.0.1";
 
-	cout << "è«‹è¼¸å…¥è¦é€£ç·šçš„ port number(å¦‚: 80):" << endl;
+	cout << "½Ğ¿é¤J­n³s½uªº port number(¦p: 80):" << endl;
 	cin >> port;
 	//port = 8000;
 
@@ -82,9 +82,9 @@ int main() {
 
 	finish_winsock_service();
 
-	cout << "è«‹è¼¸å…¥èµ·å§‹é é¢(å¦‚: index.html):" << endl;
+	cout << "½Ğ¿é¤J°_©l­¶­±(¦p: index.html):" << endl;
 	// Input single line
-	//getline(cin, msg);	// ç¬¬ä¸€æ¬¡æŠŠendlåƒæ‰
+	//getline(cin, msg);	// ²Ä¤@¦¸§âendl¦Y±¼
 	//getline(cin, msg);
 
 	// Input single string
@@ -101,18 +101,18 @@ int main() {
 }
 
 /*
- * é–‹å§‹æœå°‹é é¢
- * @param page	=> é é¢
+ * ¶}©l·j´M­¶­±
+ * @param page	=> ­¶­±
  */
 void start_search(const string &page) {
-	// result çµæ§‹ => å–å¾—é é¢
+	// result µ²ºc => ¨ú±o­¶­±
 	content *result = get_page(page);
 	if (result->status == 0) {
 		if (check_http_status(result)) {
 			output(result);
 			int next = 0;
 
-			// å°‹æ‰¾æ‰€æœ‰é€£çµä¸¦è¼¸å‡º
+			// ´M§ä©Ò¦³³sµ²¨Ã¿é¥X
 			while (true) {
 				href_struct *href = find_href(result->recv_content, next);
 				if (href->next == -1) {
@@ -124,19 +124,19 @@ void start_search(const string &page) {
 				if (check_http_status(sub_result)) {
 					output(sub_result);
 				} else {
-					cout << "[éŒ¯èª¤] æ­¤ç¶²é æ‰¾ä¸åˆ°: " << href->href << endl;
+					cout << "[¿ù»~] ¦¹ºô­¶§ä¤£¨ì: " << href->href << endl;
 				}
 			}
 		} else {
-			cout << "[éŒ¯èª¤] æ­¤ç¶²é æ‰¾ä¸åˆ°: " << page << endl;
+			cout << "[¿ù»~] ¦¹ºô­¶§ä¤£¨ì: " << page << endl;
 		}
 	}
 }
 
 /*
- * å–å¾—å–®ä¸€é é¢è³‡è¨Š
- * @param page	=> é é¢
- * @return		=> å–å¾—åˆ°çš„è³‡è¨Š
+ * ¨ú±o³æ¤@­¶­±¸ê°T
+ * @param page	=> ­¶­±
+ * @return		=> ¨ú±o¨ìªº¸ê°T
  */
 content *get_page(const string &page) {
 	string request = "GET /" + page + " HTTP/1.1\r\nHost: localhost\r\nConnection: close\r\n\r\n";
@@ -157,10 +157,10 @@ content *get_page(const string &page) {
 }
 
 /*
- * åˆå§‹åŒ– Windows socket æœå‹™
- * @param server_ip		=> ä¼ºæœå™¨ç«¯ ip ä½å€ (ipv4 æ ¼å¼)
- * @param server_port	=> ä¼ºæœå™¨ç«¯åŸ è™Ÿ
- * @return				=> åˆå§‹åŒ–æˆåŠŸèˆ‡å¦
+ * ªì©l¤Æ Windows socket ªA°È
+ * @param server_ip		=> ¦øªA¾¹ºİ ip ¦ì§} (ipv4 ®æ¦¡)
+ * @param server_port	=> ¦øªA¾¹ºİ°ğ¸¹
+ * @return				=> ªì©l¤Æ¦¨¥\»P§_
  */
 bool init_winsock_service(const char server_ip[16], u_short server_port) {
 	// connect status
@@ -168,7 +168,7 @@ bool init_winsock_service(const char server_ip[16], u_short server_port) {
 
 	// Call WSAStartup() to Register "WinSock DLL"
 	if (WSAStartup(0x101, (LPWSADATA) &wsadata) == SOCKET_ERROR) {
-		cout << "[éŒ¯èª¤] ç„¡æ³•å•Ÿå‹•Windows Socketsï¼ŒéŒ¯èª¤è¨Šæ¯: " << WSAGetLastError() << endl;
+		cout << "[¿ù»~] µLªk±Ò°ÊWindows Sockets¡A¿ù»~°T®§: " << WSAGetLastError() << endl;
 		return false;
 	}
 
@@ -190,7 +190,7 @@ bool init_winsock_service(const char server_ip[16], u_short server_port) {
 	conn_status = connect(sd, (LPSOCKADDR) &serv, sizeof(serv));
 
 	if (conn_status == SOCKET_ERROR) {
-		cout << "[éŒ¯èª¤] ç„¡æ³•é€£ç·šï¼ŒéŒ¯èª¤è¨Šæ¯: " << WSAGetLastError() << endl;
+		cout << "[¿ù»~] µLªk³s½u¡A¿ù»~°T®§: " << WSAGetLastError() << endl;
 		closesocket(sd);
 		WSACleanup();
 		return false;
@@ -200,9 +200,9 @@ bool init_winsock_service(const char server_ip[16], u_short server_port) {
 }
 
 /*
- * Socket é€£ç·š
- * @param str	=> å‚³é€çš„å…§å®¹
- * @return 		=> å–å¾—åˆ°çš„è³‡è¨Š
+ * Socket ³s½u
+ * @param str	=> ¶Ç°eªº¤º®e
+ * @return 		=> ¨ú±o¨ìªº¸ê°T
  */
 content *winsock_service(const char str[MAXLINE]) {
 	// receive content
@@ -230,7 +230,7 @@ content *winsock_service(const char str[MAXLINE]) {
 	send_status = send(sd, str, int(strlen(str)) + 1, 0);
 
 	if (send_status == SOCKET_ERROR) {
-		cout << "[éŒ¯èª¤] ç„¡æ³•å‚³é€è¨Šæ¯ï¼ŒéŒ¯èª¤è¨Šæ¯: " << WSAGetLastError() << endl;
+		cout << "[¿ù»~] µLªk¶Ç°e°T®§¡A¿ù»~°T®§: " << WSAGetLastError() << endl;
 
 		result->status = -1;
 
@@ -244,7 +244,7 @@ content *winsock_service(const char str[MAXLINE]) {
 	recv_head_len = recv(sd, str_head, MAXLINE, 0);
 
 	if (recv_head_len == SOCKET_ERROR) {
-		cout << "[éŒ¯èª¤] ç„¡æ³•æ¥æ”¶è¨Šæ¯ï¼ŒéŒ¯èª¤è¨Šæ¯: " << WSAGetLastError() << endl;
+		cout << "[¿ù»~] µLªk±µ¦¬°T®§¡A¿ù»~°T®§: " << WSAGetLastError() << endl;
 
 		result->status = -1;
 
@@ -255,7 +255,7 @@ content *winsock_service(const char str[MAXLINE]) {
 	recv_content_len = recv(sd, str_content, MAXLINE, 0);
 
 	if (recv_content_len == SOCKET_ERROR) {
-		cout << "[éŒ¯èª¤] ç„¡æ³•æ¥æ”¶è¨Šæ¯ï¼ŒéŒ¯èª¤è¨Šæ¯: " << WSAGetLastError() << endl;
+		cout << "[¿ù»~] µLªk±µ¦¬°T®§¡A¿ù»~°T®§: " << WSAGetLastError() << endl;
 
 		result->status = -1;
 
@@ -275,35 +275,35 @@ content *winsock_service(const char str[MAXLINE]) {
 }
 
 /*
- * çµæŸ Windows socket æœå‹™
+ * µ²§ô Windows socket ªA°È
  */
 void finish_winsock_service() {
 	// close socket
 	if (closesocket(sd) == SOCKET_ERROR) {
-		cout << "[éŒ¯èª¤] ç„¡æ³•é—œé–‰ socketï¼ŒéŒ¯èª¤è¨Šæ¯: " << WSAGetLastError() << endl;
+		cout << "[¿ù»~] µLªkÃö³¬ socket¡A¿ù»~°T®§: " << WSAGetLastError() << endl;
 	}
 
 	// finish "WinSock DLL"
 	if (WSACleanup() == SOCKET_ERROR) {
-		cout << "[éŒ¯èª¤] ç„¡æ³•çµ‚æ­¢Windows Socketsï¼ŒéŒ¯èª¤è¨Šæ¯: " << WSAGetLastError() << endl;
+		cout << "[¿ù»~] µLªk²×¤îWindows Sockets¡A¿ù»~°T®§: " << WSAGetLastError() << endl;
 	}
 }
 
 /*
- * å°‡çµæœè¼¸å‡º
- * @param result	=> åŸ·è¡ŒçµæœæŒ‡æ¨™
+ * ±Nµ²ªG¿é¥X
+ * @param result	=> °õ¦æµ²ªG«ü¼Ğ
  */
 void output(content *result) {
-	//cout << "[å‚³é€å…§å®¹] " << result->send << "(" << result->send_len << "bytes)" << endl;
-	cout << "[é é¢] " << result->page << endl;
-	//cout << "[å›æ‡‰æ¨™é ­] " << endl << result->recv_head << "(" << result->recv_head_len << "bytes)" << endl;
-	cout << "[å›æ‡‰å…§å®¹] " << endl << result->recv_content << endl << "(" << result->recv_content_len << "bytes)" << endl << endl;
+	//cout << "[¶Ç°e¤º®e] " << result->send << "(" << result->send_len << "bytes)" << endl;
+	cout << "[­¶­±] " << result->page << endl;
+	//cout << "[¦^À³¼ĞÀY] " << endl << result->recv_head << "(" << result->recv_head_len << "bytes)" << endl;
+	cout << "[¦^À³¤º®e] " << endl << result->recv_content << endl << "(" << result->recv_content_len << "bytes)" << endl << endl;
 }
 
 /*
- * æª¢æŸ¥é é¢æ˜¯å¦æ­£å¸¸é‹ä½œ(HTTP ç‹€æ…‹ç¢¼æ˜¯å¦ç‚º 200 OK)
- * @param result	=> åŸ·è¡Œçµæœ
- * @return			=> æ­£å¸¸èˆ‡å¦
+ * ÀË¬d­¶­±¬O§_¥¿±`¹B§@(HTTP ª¬ºA½X¬O§_¬° 200 OK)
+ * @param result	=> °õ¦æµ²ªG
+ * @return			=> ¥¿±`»P§_
  */
 bool check_http_status(content *result) {
 	int pre = 9;
@@ -315,10 +315,10 @@ bool check_http_status(content *result) {
 }
 
 /*
- * å°‹æ‰¾ href æ¨™ç±¤æ–‡å­—
- * @param html	=> å…§å®¹
- * @param start	=> é–‹å§‹å°‹æ‰¾è™•
- * @return 		=> å°‹æ‰¾çµæœç‹€æ…‹
+ * ´M§ä href ¼ĞÅÒ¤å¦r
+ * @param html	=> ¤º®e
+ * @param start	=> ¶}©l´M§ä³B
+ * @return 		=> ´M§äµ²ªGª¬ºA
  */
 int find_href_tag(const string &html, int start) {
 	size_t found = html.find("href", start);
@@ -329,10 +329,10 @@ int find_href_tag(const string &html, int start) {
 }
 
 /*
- * å°‹æ‰¾ href æ¨™ç±¤çš„å¼•è™Ÿ
- * @param html	=> å…§å®¹
- * @param start	=> é–‹å§‹å°‹æ‰¾è™•
- * @return 		=> å°‹æ‰¾çµæœç‹€æ…‹
+ * ´M§ä href ¼ĞÅÒªº¤Ş¸¹
+ * @param html	=> ¤º®e
+ * @param start	=> ¶}©l´M§ä³B
+ * @return 		=> ´M§äµ²ªGª¬ºA
  */
 int find_href_quot(const string &html, int start) {
 	size_t found = html.find('"', start);
@@ -343,32 +343,32 @@ int find_href_quot(const string &html, int start) {
 }
 
 /*
- * å°‹æ‰¾å–®ä¸€ href æ¨™ç±¤
- * @param html	=> å…§å®¹
- * @param start	=> é–‹å§‹å°‹æ‰¾è™•
- * @return 		=> å°‹æ‰¾çµæœ href_struct çµæ§‹
+ * ´M§ä³æ¤@ href ¼ĞÅÒ
+ * @param html	=> ¤º®e
+ * @param start	=> ¶}©l´M§ä³B
+ * @return 		=> ´M§äµ²ªG href_struct µ²ºc
  */
 href_struct *find_href(const string &html, int start) {
 	int href, head, foot;
 	auto *result = new href_struct;
 
-	// å°‹æ‰¾ href æ¨™ç±¤
+	// ´M§ä href ¼ĞÅÒ
 	href = find_href_tag(html, start);
 
 	if (href == -1) {
 		result->href = "";
 		result->next = -1;
 	} else {
-		// å°‹æ‰¾ href å¾Œçš„ç¬¬ä¸€å€‹ "
+		// ´M§ä href «áªº²Ä¤@­Ó "
 		head = find_href_quot(html, href);
 
-		// å°‹æ‰¾ href å¾Œçš„ç¬¬äºŒå€‹ "
+		// ´M§ä href «áªº²Ä¤G­Ó "
 		foot = find_href_quot(html, head + 1);
 
-		// å–å¾—å…©å€‹ " ä¹‹é–“çš„å…§å®¹
+		// ¨ú±o¨â­Ó " ¤§¶¡ªº¤º®e
 		result->href = html.substr(head + 1, foot - head - 1);
 
-		// ä¸‹ä¸€å€‹é–‹å§‹å°‹æ‰¾çš„ä½ç½®
+		// ¤U¤@­Ó¶}©l´M§äªº¦ì¸m
 		result->next = foot + 1;
 	}
 
