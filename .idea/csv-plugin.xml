@@ -10,7 +10,21 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\echo_server.cpp">
+          <value>
+            <Attribute>
+              <option name="separator" value="&#9;" />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\echo_service.cpp">
+          <value>
+            <Attribute>
+              <option name="separator" value="&#9;" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\guest_number_server.cpp">
           <value>
             <Attribute>
               <option name="separator" value="&#9;" />

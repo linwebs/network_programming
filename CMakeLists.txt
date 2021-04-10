@@ -31,5 +31,20 @@ target_link_libraries(http_get ws2_32 wsock32)
 add_executable(hw3 hw3.cpp)
 target_link_libraries(hw3 ws2_32 wsock32)
 
+# week6 echo client
+add_executable(echo_client echo_client.cpp)
+target_link_libraries(echo_client ws2_32 wsock32)
+
+# week6 echo server
+add_executable(echo_server echo_server.cpp)
+target_link_libraries(echo_server ws2_32 wsock32)
+
+# week6 guest number
+add_executable(guest_number_client guest_number_client.cpp)
+target_link_libraries(guest_number_client ws2_32 wsock32)
+
+add_executable(guest_number_server guest_number_server.cpp)
+target_link_libraries(guest_number_server ws2_32 wsock32)
+
 # clock
 add_executable(clock clock.cpp)

@@ -23,5 +23,11 @@ Created by Linwebs.
 * [hw3](hw3.cpp) HW-簡易的網頁爬蟲程式
 * [hw3.pdf](hw_pdf/hw3.pdf) HW3 說明文件
 
+# Week6
+* [echo_client](echo_client.cpp) client 端程式
+* [echo_server](echo_server.cpp) server 端程式
+* [guest_number_client](guest_number_client.cpp) 猜數字 client 端程式
+* [guest_number_server](guest_number_server.cpp) 猜數字 server 端程式
+
 ## 其餘項目
 * [clock](clock.cpp) C++執行時間計算程式
