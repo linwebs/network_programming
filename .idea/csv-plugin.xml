@@ -45,6 +45,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\mid_1_server.cpp">
+          <value>
+            <Attribute>
+              <option name="separator" value="&#9;" />
+            </Attribute>
+          </value>
+        </entry>
       </map>
     </option>
   </component>

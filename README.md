@@ -43,5 +43,12 @@ Created by Linwebs.
   * [chat_server_v3](chat_server_v3.cpp) 聊天室 server 端程式 (v3)
 * [hw4.pdf](hw_pdf/hw4.pdf) HW4 說明文件
 
+# Week9
+* [mid_1_server](mid_1_server.cpp) 期中考 1 server
+* [mid_1_client](mid_1_client.cpp) 期中考 1 client
+* [mid_2_server](mid_2_server.cpp) 期中考 2 server
+* [mid_2_client1](mid_2_client1.cpp) 期中考 2 client1
+* [mid_2_client2](mid_2_client2.cpp) 期中考 2 client2
+
 ## 其餘項目
 * [clock](clock.cpp) C++執行時間計算程式
