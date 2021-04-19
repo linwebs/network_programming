@@ -49,6 +49,7 @@ Created by Linwebs.
 * [mid_2_server](mid_2_server.cpp) 期中考 2 server
 * [mid_2_client1](mid_2_client1.cpp) 期中考 2 client1
 * [mid_2_client2](mid_2_client2.cpp) 期中考 2 client2
+* [mid.pdf](hw_pdf/mid.pdf) 109-2 NP midterm 說明文件
 
 ## 其餘項目
 * [clock](clock.cpp) C++執行時間計算程式
