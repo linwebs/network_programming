@@ -78,6 +78,7 @@ Created by Linwebs.
   * [udp_client_static_port_client](udp_client_static_port_client.cpp) UDP 傳送端固定連接埠 client 端
 * UDP 接收端不關心傳送來源
   * [udp_no_care_source_server](udp_no_care_source_server.cpp) UDP 接收端不關心傳送來源 server 端
+* [hw5.pdf](hw_pdf/hw5.pdf) HW5 說明文件
 
 ## 其餘項目
 
