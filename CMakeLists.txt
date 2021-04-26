@@ -99,5 +99,49 @@ target_link_libraries(mid_2_client1 ws2_32 wsock32)
 add_executable(mid_2_client2 mid_2_client2.cpp)
 target_link_libraries(mid_2_client2 ws2_32 wsock32)
 
+# week10 basic udp client
+add_executable(basic_udp_client basic_udp_client.cpp)
+target_link_libraries(basic_udp_client ws2_32 wsock32)
+
+# week10 basic udp server
+add_executable(basic_udp_server basic_udp_server.cpp)
+target_link_libraries(basic_udp_server ws2_32 wsock32)
+
+# week10 udp multiple server client
+add_executable(udp_mult_server_client udp_mult_server_client.cpp)
+target_link_libraries(udp_mult_server_client ws2_32 wsock32)
+
+# week10 udp multiple server server 1
+add_executable(udp_mult_server_server1 udp_mult_server_server1.cpp)
+target_link_libraries(udp_mult_server_server1 ws2_32 wsock32)
+
+# week10 udp multiple server server 2
+add_executable(udp_mult_server_server2 udp_mult_server_server2.cpp)
+target_link_libraries(udp_mult_server_server2 ws2_32 wsock32)
+
+# week10 udp multiple client server
+add_executable(udp_mult_client_server udp_mult_client_server.cpp)
+target_link_libraries(udp_mult_client_server ws2_32 wsock32)
+
+# week10 udp multiple client client 1
+add_executable(udp_mult_client_client1 udp_mult_client_client1.cpp)
+target_link_libraries(udp_mult_client_client1 ws2_32 wsock32)
+
+# week10 udp multiple client client 2
+add_executable(udp_mult_client_client2 udp_mult_client_client2.cpp)
+target_link_libraries(udp_mult_client_client2 ws2_32 wsock32)
+
+# week10 udp static client client
+add_executable(udp_static_client_client udp_static_client_client.cpp)
+target_link_libraries(udp_static_client_client ws2_32 wsock32)
+
+# week10 udp static client client
+add_executable(udp_client_static_port_client udp_client_static_port_client.cpp)
+target_link_libraries(udp_client_static_port_client ws2_32 wsock32)
+
+# week10 udp no care source server
+add_executable(udp_no_care_source_server udp_no_care_source_server.cpp)
+target_link_libraries(udp_no_care_source_server ws2_32 wsock32)
+
 # clock
 add_executable(clock clock.cpp)
