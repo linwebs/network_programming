@@ -12,3 +12,6 @@ miniweb
 gethostbyaddr.cpp
 simple-client.c
 simple_browser.c
+
+# HW8 exercise
+hw8_exercise*

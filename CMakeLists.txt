@@ -143,5 +143,115 @@ target_link_libraries(udp_client_static_port_client ws2_32 wsock32)
 add_executable(udp_no_care_source_server udp_no_care_source_server.cpp)
 target_link_libraries(udp_no_care_source_server ws2_32 wsock32)
 
+# week11 exercise 1 tcp send first client
+add_executable(tcp_send_first_client tcp_send_first_client.cpp)
+target_link_libraries(tcp_send_first_client ws2_32 wsock32)
+
+# week11 exercise 1 tcp send first server
+add_executable(tcp_send_first_server tcp_send_first_server.cpp)
+target_link_libraries(tcp_send_first_server ws2_32 wsock32)
+
+# week11 exercise 1 tcp recv first client
+add_executable(tcp_recv_first_client tcp_recv_first_client.cpp)
+target_link_libraries(tcp_recv_first_client ws2_32 wsock32)
+
+# week11 exercise 1 tcp recv first server
+add_executable(tcp_recv_first_server tcp_recv_first_server.cpp)
+target_link_libraries(tcp_recv_first_server ws2_32 wsock32)
+
+# week11 exercise 1 1 hw8 client
+add_executable(hw8_exercise1_1_client hw8_exercise1_1_client.cpp)
+target_link_libraries(hw8_exercise1_1_client ws2_32 wsock32)
+
+# week11 exercise 1 1 hw8 server
+add_executable(hw8_exercise1_1_server hw8_exercise1_1_server.cpp)
+target_link_libraries(hw8_exercise1_1_server ws2_32 wsock32)
+
+# week11 exercise 1 2 hw8 client
+add_executable(hw8_exercise1_2_client hw8_exercise1_2_client.cpp)
+target_link_libraries(hw8_exercise1_2_client ws2_32 wsock32)
+
+# week11 exercise 1 2 hw8 server
+add_executable(hw8_exercise1_2_server hw8_exercise1_2_server.cpp)
+target_link_libraries(hw8_exercise1_2_server ws2_32 wsock32)
+
+# week11 exercise 2 1 hw8 client
+add_executable(hw8_exercise2_1_client hw8_exercise2_1_client.cpp)
+target_link_libraries(hw8_exercise2_1_client ws2_32 wsock32)
+
+# week11 exercise 2 1 hw8 server
+add_executable(hw8_exercise2_1_server hw8_exercise2_1_server.cpp)
+target_link_libraries(hw8_exercise2_1_server ws2_32 wsock32)
+
+# week11 exercise 2 2 hw8 client
+add_executable(hw8_exercise2_2_client hw8_exercise2_2_client.cpp)
+target_link_libraries(hw8_exercise2_2_client ws2_32 wsock32)
+
+# week11 exercise 2 2 hw8 server
+add_executable(hw8_exercise2_2_server hw8_exercise2_2_server.cpp)
+target_link_libraries(hw8_exercise2_2_server ws2_32 wsock32)
+
+# week11 exercise 3 hw8 client
+add_executable(hw8_exercise3_client hw8_exercise3_client.cpp)
+target_link_libraries(hw8_exercise3_client ws2_32 wsock32)
+
+# week11 exercise 3 hw8 server
+add_executable(hw8_exercise3_server hw8_exercise3_server.cpp)
+target_link_libraries(hw8_exercise3_server ws2_32 wsock32)
+
+# week11 exercise 4 3 hw8 client
+add_executable(hw8_exercise4_3_client hw8_exercise4_3_client.cpp)
+target_link_libraries(hw8_exercise4_3_client ws2_32 wsock32)
+
+# week11 exercise 4 3 hw8 server
+add_executable(hw8_exercise4_3_server hw8_exercise4_3_server.cpp)
+target_link_libraries(hw8_exercise4_3_server ws2_32 wsock32)
+
+# week11 exercise 5 text read write
+add_executable(text_read_write text_read_write.cpp)
+
+# week11 exercise 5 send many text client
+add_executable(send_many_text_client send_many_text_client.cpp)
+target_link_libraries(send_many_text_client ws2_32 wsock32)
+
+# week11 exercise 5 send many text server
+add_executable(send_many_text_server send_many_text_server.cpp)
+target_link_libraries(send_many_text_server ws2_32 wsock32)
+
+# week11 exercise 6 binary read write
+add_executable(binary_read_write binary_read_write.cpp)
+
+# week11 exercise 6 send binary client
+add_executable(send_binary_client send_binary_client.cpp)
+target_link_libraries(send_binary_client ws2_32 wsock32)
+
+# week11 exercise 6 send binary server
+add_executable(send_binary_server send_binary_server.cpp)
+target_link_libraries(send_binary_server ws2_32 wsock32)
+
+# week11 exercise 7 udp send many text client
+add_executable(udp_send_many_text_client udp_send_many_text_client.cpp)
+target_link_libraries(udp_send_many_text_client ws2_32 wsock32)
+
+# week11 exercise 7 udp send many text server
+add_executable(udp_send_many_text_server udp_send_many_text_server.cpp)
+target_link_libraries(udp_send_many_text_server ws2_32 wsock32)
+
+# week11 exercise 7 udp send binary client
+add_executable(udp_send_binary_client udp_send_binary_client.cpp)
+target_link_libraries(udp_send_binary_client ws2_32 wsock32)
+
+# week11 exercise 7 udp send binary server
+add_executable(udp_send_binary_server udp_send_binary_server.cpp)
+target_link_libraries(udp_send_binary_server ws2_32 wsock32)
+
+# week11 exercise 8 udp send many text end client
+add_executable(udp_send_many_text_end_client udp_send_many_text_end_client.cpp)
+target_link_libraries(udp_send_many_text_end_client ws2_32 wsock32)
+
+# week11 exercise 8 udp send many text end server
+add_executable(udp_send_many_text_end_server udp_send_many_text_end_server.cpp)
+target_link_libraries(udp_send_many_text_end_server ws2_32 wsock32)
+
 # clock
 add_executable(clock clock.cpp)
