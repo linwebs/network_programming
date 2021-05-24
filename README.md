@@ -128,6 +128,7 @@ Created by Linwebs.
 	* UDP 連續傳送大量文字並結束
 		* [udp_send_many_text_end_client](udp_send_many_text_end_client.cpp) UDP 連續傳送大量文字並結束 client 端
 		* [udp_send_many_text_end_server](udp_send_many_text_end_server.cpp) UDP 連續傳送大量文字並結束 server 端
+* [hw6.pdf](hw_pdf/hw6.pdf) HW6 說明文件
 
 # Week12
 
@@ -143,6 +144,7 @@ Created by Linwebs.
 * 非攔阻模式應用3
 	* [tcp_non_block_apply3_client](tcp_non_block_apply3_client.cpp) 非攔阻模式應用3 client
 	* [tcp_non_block_apply3_server](tcp_non_block_apply3_server.cpp) 非攔阻模式應用3 server
+* [hw7.pdf](hw_pdf/hw7.pdf) HW7 說明文件
 
 # Week13
 
@@ -161,6 +163,7 @@ Created by Linwebs.
 * 使用 timeout
 	* [week13_5_client](week13_5_client.cpp) 使用 timeout client
 	* [week13_5_server](week13_5_server.cpp) 使用 timeout server
+* [hw8.pdf](hw_pdf/hw8.pdf) HW8 說明文件
 
 # Week14
 
@@ -183,6 +186,7 @@ Created by Linwebs.
 * 聊天室 Client 多工
 	* [week_14_3_client](week_14_3_client.cpp) 聊天室 Client 多工 client
 	* [week_14_3_server](week_14_3_server.cpp) 聊天室 Client 多工 server
+* [hw9.pdf](hw_pdf/hw9.pdf) HW9 說明文件
 
 ## 其餘項目
 
