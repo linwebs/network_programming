@@ -129,6 +129,61 @@ Created by Linwebs.
 		* [udp_send_many_text_end_client](udp_send_many_text_end_client.cpp) UDP 連續傳送大量文字並結束 client 端
 		* [udp_send_many_text_end_server](udp_send_many_text_end_server.cpp) UDP 連續傳送大量文字並結束 server 端
 
+# Week12
+
+* 非攔阻模式
+	* [tcp_non_block_client](tcp_non_block_client.cpp) 非攔阻模式 client
+	* [tcp_non_block_server](tcp_non_block_server.cpp) 非攔阻模式 server
+* 非攔阻模式應用1
+	* [tcp_non_block_apply1_client](tcp_non_block_apply1_client.cpp) 非攔阻模式應用1 client
+	* [tcp_non_block_apply1_server](tcp_non_block_apply1_server.cpp) 非攔阻模式應用1 server
+* 非攔阻模式應用2
+	* [tcp_non_block_apply2_client](tcp_non_block_apply2_client.cpp) 非攔阻模式應用2 client
+	* [tcp_non_block_apply2_server](tcp_non_block_apply2_server.cpp) 非攔阻模式應用2 server
+* 非攔阻模式應用3
+	* [tcp_non_block_apply3_client](tcp_non_block_apply3_client.cpp) 非攔阻模式應用3 client
+	* [tcp_non_block_apply3_server](tcp_non_block_apply3_server.cpp) 非攔阻模式應用3 server
+
+# Week13
+
+* 一送一收，觀察檢查表的運作
+	* [week13_1_client](week13_1_client.cpp) 一送一收 client
+	* [week13_1_server](week13_1_server.cpp) 一送一收 server
+* 兩個 client，server 會 echo
+	* [week13_2_client](week13_2_client.cpp) 兩個 client，server 會 echo client
+	* [week13_2_server](week13_2_server.cpp) 兩個 client，server 會 echo server
+* 服務多個 client 的 echo server
+	* [week13_3_client](week13_3_client.cpp) 服務多個 client 的 echo server client
+	* [week13_3_server](week13_3_server.cpp) 服務多個 client 的 echo server server
+* 使用 writefds 來傳送
+	* [week13_4_client](week13_4_client.cpp) 使用 writefds 來傳送 client
+	* [week13_4_server](week13_4_server.cpp) 使用 writefds 來傳送 server
+* 使用 timeout
+	* [week13_5_client](week13_5_client.cpp) 使用 timeout client
+	* [week13_5_server](week13_5_server.cpp) 使用 timeout server
+
+# Week14
+
+* 產生 thread
+	* [create_thread](create_thread.cpp) 產生 thread
+* 產生 thread 傳遞參數
+	* [thread_param](thread_param.cpp) 產生 thread 傳遞參數
+* 產生 thread 傳遞參數 1~10
+	* [thread_param_ex](thread_param_ex.cpp) 產生 thread 傳遞參數 1~10
+* multiple thread 交換資料
+	* [multi_thread](multi_thread.cpp) multiple thread 交換資料
+* multiple thread 交換資料 1 加到 100
+	* [multi_thread_ex](multi_thread_ex.cpp) multiple thread 交換資料 1 加到 100
+* Echo Server 多工 
+	* [week_14_1_client](week_14_1_client.cpp) Echo Server 多工 client
+	* [week_14_1_server](week_14_1_server.cpp) Echo Server 多工 server
+* 聊天室 Server 多工
+	* [week_14_2_client](week_14_2_client.cpp) 聊天室 Server 多工 client
+	* [week_14_2_server](week_14_2_server.cpp) 聊天室 Server 多工 server
+* 聊天室 Client 多工
+	* [week_14_3_client](week_14_3_client.cpp) 聊天室 Client 多工 client
+	* [week_14_3_server](week_14_3_server.cpp) 聊天室 Client 多工 server
+
 ## 其餘項目
 
 * [clock](clock.cpp) C++執行時間計算程式

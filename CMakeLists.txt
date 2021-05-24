@@ -253,5 +253,121 @@ target_link_libraries(udp_send_many_text_end_client ws2_32 wsock32)
 add_executable(udp_send_many_text_end_server udp_send_many_text_end_server.cpp)
 target_link_libraries(udp_send_many_text_end_server ws2_32 wsock32)
 
+# week12 tcp non block client
+add_executable(tcp_non_block_client tcp_non_block_client.cpp)
+target_link_libraries(tcp_non_block_client ws2_32 wsock32)
+
+# week12 tcp non block server
+add_executable(tcp_non_block_server tcp_non_block_server.cpp)
+target_link_libraries(tcp_non_block_server ws2_32 wsock32)
+
+# week12 tcp non block apply1 client
+add_executable(tcp_non_block_apply1_client tcp_non_block_apply1_client.cpp)
+target_link_libraries(tcp_non_block_apply1_client ws2_32 wsock32)
+
+# week12 tcp non block apply1 server
+add_executable(tcp_non_block_apply1_server tcp_non_block_apply1_server.cpp)
+target_link_libraries(tcp_non_block_apply1_server ws2_32 wsock32)
+
+# week12 tcp non block apply2 client
+add_executable(tcp_non_block_apply2_client tcp_non_block_apply2_client.cpp)
+target_link_libraries(tcp_non_block_apply2_client ws2_32 wsock32)
+
+# week12 tcp non block apply2 server
+add_executable(tcp_non_block_apply2_server tcp_non_block_apply2_server.cpp)
+target_link_libraries(tcp_non_block_apply2_server ws2_32 wsock32)
+
+# week12 tcp non block apply3 client
+add_executable(tcp_non_block_apply3_client tcp_non_block_apply3_client.cpp)
+target_link_libraries(tcp_non_block_apply3_client ws2_32 wsock32)
+
+# week12 tcp non block apply3 server
+add_executable(tcp_non_block_apply3_server tcp_non_block_apply3_server.cpp)
+target_link_libraries(tcp_non_block_apply3_server ws2_32 wsock32)
+
+# week13 week13_1 client
+add_executable(week13_1_client week13_1_client.cpp)
+target_link_libraries(week13_1_client ws2_32 wsock32)
+
+# week13 week13_1 server
+add_executable(week13_1_server week13_1_server.cpp)
+target_link_libraries(week13_1_server ws2_32 wsock32)
+
+# week13 week13_2 client
+add_executable(week13_2_client week13_2_client.cpp)
+target_link_libraries(week13_2_client ws2_32 wsock32)
+
+# week13 week13_2 server
+add_executable(week13_2_server week13_2_server.cpp)
+target_link_libraries(week13_2_server ws2_32 wsock32)
+
+# week13 week13_3 client
+add_executable(week13_3_client week13_3_client.cpp)
+target_link_libraries(week13_3_client ws2_32 wsock32)
+
+# week13 week13_3 server
+add_executable(week13_3_server week13_3_server.cpp)
+target_link_libraries(week13_3_server ws2_32 wsock32)
+
+# week13 week13_4 client
+add_executable(week13_4_client week13_4_client.cpp)
+target_link_libraries(week13_4_client ws2_32 wsock32)
+
+# week13 week13_4 server
+add_executable(week13_4_server week13_4_server.cpp)
+target_link_libraries(week13_4_server ws2_32 wsock32)
+
+# week13 week13_5 client
+add_executable(week13_5_client week13_5_client.cpp)
+target_link_libraries(week13_5_client ws2_32 wsock32)
+
+# week13 week13_5 server
+add_executable(week13_5_server week13_5_server.cpp)
+target_link_libraries(week13_5_server ws2_32 wsock32)
+
+# week14 create thread
+add_executable(create_thread create_thread.cpp)
+target_link_libraries(create_thread ws2_32 wsock32)
+
+# week14 thread param
+add_executable(thread_param thread_param.cpp)
+target_link_libraries(thread_param ws2_32 wsock32)
+
+# week14 thread param ex
+add_executable(thread_param_ex thread_param_ex.cpp)
+target_link_libraries(thread_param_ex ws2_32 wsock32)
+
+# week14 multi thread
+add_executable(multi_thread multi_thread.cpp)
+target_link_libraries(multi_thread ws2_32 wsock32)
+
+# week14 multi thread ex
+add_executable(multi_thread_ex multi_thread_ex.cpp)
+target_link_libraries(multi_thread_ex ws2_32 wsock32)
+
+# week14 week 14 1 client
+add_executable(week_14_1_client week_14_1_client.cpp)
+target_link_libraries(week_14_1_client ws2_32 wsock32)
+
+# week14 week 14 1 server
+add_executable(week_14_1_server week_14_1_server.cpp)
+target_link_libraries(week_14_1_server ws2_32 wsock32)
+
+# week14 week 14 2 client
+add_executable(week_14_2_client week_14_2_client.cpp)
+target_link_libraries(week_14_2_client ws2_32 wsock32)
+
+# week14 week 14 2 server
+add_executable(week_14_2_server week_14_2_server.cpp)
+target_link_libraries(week_14_2_server ws2_32 wsock32)
+
+# week14 week 14 3 client
+add_executable(week_14_3_client week_14_3_client.cpp)
+target_link_libraries(week_14_3_client ws2_32 wsock32)
+
+# week14 week 14 3 server
+add_executable(week_14_3_server week_14_3_server.cpp)
+target_link_libraries(week_14_3_server ws2_32 wsock32)
+
 # clock
 add_executable(clock clock.cpp)
