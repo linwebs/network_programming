@@ -188,6 +188,25 @@ Created by Linwebs.
 	* [week_14_3_server](week_14_3_server.cpp) 聊天室 Client 多工 server
 * [hw9.pdf](hw_pdf/hw9.pdf) HW9 說明文件
 
+# Week15
+
+* 基本廣播示範 (client, server)
+	* [broadcast_basic_client](broadcast_basic_client.cpp) 基本廣播示範 client
+	* [broadcast_basic_server](broadcast_basic_server.cpp) 基本廣播示範 server
+* Server 同時傳送多種資料
+	* Server 同時傳送多種資料的 client 與前面的[基本廣播示範的 client](broadcast_basic_client.cpp) 相同
+	* [broadcast_multiple_data_server](broadcast_multiple_data_server.cpp) Server 同時傳送多種資料
+* Client 過濾接收的資料
+	* [broadcast_change_channel_client](broadcast_change_channel_client.cpp) Client 過濾接收的資料 client
+	* Client 過濾接收的資料的 server 與前面的[Server 同時傳送多種資料 server](broadcast_multiple_data_server.cpp) 相同
+* Client 使用 thread 作出選台效果
+	* [broadcast_thread_channel_client](broadcast_thread_channel_client.cpp) Client 使用 thread 作出選台效果 client
+	* Client 使用 thread 作出選台效果的 server 與前面的[Server 同時傳送多種資料 server](broadcast_multiple_data_server.cpp) 相同
+* 用不同 port 實現頻道與選台 (client, server)
+	* [broadcast_thread_channel_port_client](broadcast_channel_port_client.cpp) 用不同 port 實現頻道與選台 client
+	* [broadcast_thread_channel_port_server](broadcast_channel_port_server.cpp) 用不同 port 實現頻道與選台 server
+* [hw10.pdf](hw_pdf/hw10.pdf) HW10 說明文件
+
 ## 其餘項目
 
 * [clock](clock.cpp) C++執行時間計算程式

@@ -369,5 +369,33 @@ target_link_libraries(week_14_3_client ws2_32 wsock32)
 add_executable(week_14_3_server week_14_3_server.cpp)
 target_link_libraries(week_14_3_server ws2_32 wsock32)
 
+# week15 broadcast basic client
+add_executable(broadcast_basic_client broadcast_basic_client.cpp)
+target_link_libraries(broadcast_basic_client ws2_32 wsock32)
+
+# week15 broadcast basic server
+add_executable(broadcast_basic_server broadcast_basic_server.cpp)
+target_link_libraries(broadcast_basic_server ws2_32 wsock32)
+
+# week15 broadcast multiple data server
+add_executable(broadcast_multiple_data_server broadcast_multiple_data_server.cpp)
+target_link_libraries(broadcast_multiple_data_server ws2_32 wsock32)
+
+# week15 broadcast change channel client
+add_executable(broadcast_change_channel_client broadcast_change_channel_client.cpp)
+target_link_libraries(broadcast_change_channel_client ws2_32 wsock32)
+
+# week15 broadcast broadcast thread change channel client
+add_executable(broadcast_thread_channel_client broadcast_thread_channel_client.cpp)
+target_link_libraries(broadcast_thread_channel_client ws2_32 wsock32)
+
+# week15 broadcast broadcast change channel port client
+add_executable(broadcast_channel_port_client broadcast_channel_port_client.cpp)
+target_link_libraries(broadcast_channel_port_client ws2_32 wsock32)
+
+# week15 broadcast broadcast change channel port server
+add_executable(broadcast_channel_port_server broadcast_channel_port_server.cpp)
+target_link_libraries(broadcast_channel_port_server ws2_32 wsock32)
+
 # clock
 add_executable(clock clock.cpp)
